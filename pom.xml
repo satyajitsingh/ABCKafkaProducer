@@ -1,0 +1,151 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>KafkaProducer</groupId>
+  <artifactId>Producer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ABCKafkaProducer</name>
+  <description>Producer for Kafka JSON messages</description>
+  <dependencies>
+   		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+            <version>2.9.0</version>
+            <scope>compile</scope>
+        </dependency>
+        
+   		 <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>6.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>rest</artifactId>
+            <version>5.5.3</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>6.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+      
+   
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.9.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <dependency>
+    		<groupId>org.apache.kafka</groupId>
+    		<artifactId>kafka_2.12</artifactId>
+    		<version>1.1.0</version>
+    		<scope>compile</scope>
+		</dependency>
+
+        <dependency>
+    		<groupId>org.apache.kafka</groupId>
+    		<artifactId>connect-api</artifactId>
+    		<version>1.0.0</version>
+    		<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.apache.kafka</groupId>
+    		<artifactId>connect-file</artifactId>
+    		<version>1.0.0</version>
+    		<scope>compile</scope>
+		</dependency>
+		<dependency>
+    	<groupId>org.apache.httpcomponents</groupId>
+    		<artifactId>httpcore</artifactId>
+    		<version>4.4.9</version>
+    		<scope>compile</scope>
+		</dependency>
+		<dependency>
+    		<groupId>org.apache.httpcomponents</groupId>
+    		<artifactId>httpclient</artifactId>
+    		<version>4.5.5</version>
+    		<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+    		<groupId>org.apache.kafka</groupId>
+    		<artifactId>connect-json</artifactId>
+    		<version>1.0.0</version>
+		</dependency>
+		
+        <dependency>
+    		<groupId>org.elasticsearch</groupId>
+    		<artifactId>elasticsearch</artifactId>
+    		<version>6.2.2</version>
+    		<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+    		<groupId>org.mongodb</groupId>
+    		<artifactId>mongo-java-driver</artifactId>
+    		<version>3.6.3</version>
+    		<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+    		<groupId>com.fasterxml.jackson.core</groupId>
+    		<artifactId>jackson-core</artifactId>
+    		<version>2.9.4</version>
+    		<scope>compile</scope>
+		</dependency>
+		
+		<!-- SLF4j  -->
+		<dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.12</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.6</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>com.ABC</groupId>
+			<artifactId>contact</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/Contact-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+		
+  </dependencies>
+  <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+    				<execution>
+     					 <goals>
+       							<goal>attached</goal>
+      						</goals>
+      			<phase>package</phase>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.satya.Producer</mainClass>
+                        </manifest>
+                    </archive>
+                     <descriptorRefs>
+            			<descriptorRef>jar-with-dependencies</descriptorRef>
+          			</descriptorRefs>
+                </configuration>
+                   </execution>
+  				</executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
