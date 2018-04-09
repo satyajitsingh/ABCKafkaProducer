@@ -54,10 +54,10 @@ public class Producer {
 	
 	public static void main(String[] args) throws ParseException {
 		
-		if (args.length != 2) {
+		/*if (args.length != 2) {
             System.err.println("Please specify 3 parameters: Topic, No. of Records to create and Kafka broker information");
             System.exit(-1);
-        }      
+        } */     
         in = new Scanner(System.in);
         String topicName = args[0];
         int nRec = Integer.parseInt(args[1]);
